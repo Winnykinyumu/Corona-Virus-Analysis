@@ -48,8 +48,27 @@ The EDA entailed answering key questions such as;
   
   ![image](https://github.com/Winnykinyumu/Corona-Virus-Analysis/assets/124139386/d041db4b-48c7-48c6-9d15-4e5e8aff497b)
 
-5. Number of month present in dataset
-6. Find monthly average for confirmed, deaths, recovered
+3. Number of month present in dataset
+   ```SQL
+   Select COUNT(MONTH(Date)) as number_of_month
+   from [Corona virus Analysis].dbo.[Corona Virus Dataset]
+   GROUP BY Date, MONTH(Date)
+   ```
+  - **Results**
+    
+    ![image](https://github.com/Winnykinyumu/Corona-Virus-Analysis/assets/124139386/ab890d12-dfd0-4249-b8b5-551c0e4fb605)
+
+4. Find monthly average for confirmed, deaths, recovered
+  ```SQL
+  Select DISTINCT(MONTH(Date)) as month, AVG(Confirmed)as avgconfirmed, AVG (Deaths) as avgdeaths, AVG(Recovered)as avgrecovered
+  from [Corona virus Analysis].dbo.[Corona Virus Dataset]
+  GROUP BY MONTH(Date)
+  Order by Month(Date)
+  ```
+- **Results**
+  
+  ![image](https://github.com/Winnykinyumu/Corona-Virus-Analysis/assets/124139386/d5573b2b-a305-47bb-97a5-26ff0146a522)
+
 7. Find most frequent value for confirmed, deaths, recovered each month
 8. Find minimum values for confirmed, deaths, recovered per year
 9. Find maximum values of confirmed, deaths, recovered per year
