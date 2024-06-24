@@ -1,21 +1,36 @@
 # Corona-Virus-Analysis
 ![Corona virus picture](https://github.com/Winnykinyumu/Corona-Virus-Analysis/assets/124139386/654fc539-a94e-405a-b056-d0b3a97b9293)
 ### Project Overview
+---
 The objective of this project is to analyze the impact and spread of Coronavirus (Covid-19) between January 2020 and June 2021 across most countries worldwide. The analysis aims to provide insights into the patterns and trends associated with the pandemic, including case numbers, mortality rates and recoveries.
 ### Data Source
+---
 The primary dataset used for this analysis is the "corona_Virus_Dataset.CSV" file, containing detailed information for each country's record.
 ### Tools Used
+---
 - Excel- Data cleaning [Download here](https://microsoft.com)
 - SQL Server -Data Analysis [Download here](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
 ### Data cleaning/preparation
+---
 Cleaning the dataset entailed:
 1. Data loading and inspection.
 2. Identifying and imputing missing values.
-3. Identifying and removing duplicates.
+- Write a code to check NULL values
+  ```SQL
+  select COUNT(*) as number_of_nulls
+  from [Corona virus Analysis].dbo.[Corona Virus Dataset]
+  WHERE Province IS NULL AND Country_Region IS NULL AND Latitude IS NULL AND Longitude IS NULL AND Date IS NULL AND Confirmed IS NULL AND Deaths IS NULL AND Recovered IS NULL
+  ```
+  - **Results**
+    
+    ![image](https://github.com/Winnykinyumu/Corona-Virus-Analysis/assets/124139386/a472807f-850f-4d64-ac17-3daac05e3047)
+    😆
+
+  
 ### Exploratory Data Analysis (EDA)
+---
 The EDA entailed answering key questions such as;
-1. Write a code to check NULL values
-2. If NULL values are present, update them with zeros for all columns.
+
 3. check total number of rows
 4. Check what is start_date and end_date
 5. Number of month present in dataset
