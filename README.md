@@ -30,9 +30,24 @@ Cleaning the dataset entailed:
 ### Exploratory Data Analysis (EDA)
 ---
 The EDA entailed answering key questions such as;
+1. check total number of rows
+   ```SQL
+   select COUNT(*)as total_rows
+   from [Corona virus Analysis].dbo.[Corona Virus Dataset]
+   ```
+- **Results**
+  
+  ![image](https://github.com/Winnykinyumu/Corona-Virus-Analysis/assets/124139386/3267b297-588a-4bcd-8707-349b636c2bbb)
 
-3. check total number of rows
-4. Check what is start_date and end_date
+2. Check what is start_date and end_date
+   ```SQL
+   select MIN(Date)as start_date, MAX(Date) as end_date
+   from [Corona virus Analysis].dbo.[Corona Virus Dataset]
+   ```
+- **Results**
+  
+  ![image](https://github.com/Winnykinyumu/Corona-Virus-Analysis/assets/124139386/d041db4b-48c7-48c6-9d15-4e5e8aff497b)
+
 5. Number of month present in dataset
 6. Find monthly average for confirmed, deaths, recovered
 7. Find most frequent value for confirmed, deaths, recovered each month
