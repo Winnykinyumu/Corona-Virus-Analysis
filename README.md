@@ -69,12 +69,60 @@ The EDA entailed answering key questions such as;
   
   ![image](https://github.com/Winnykinyumu/Corona-Virus-Analysis/assets/124139386/d5573b2b-a305-47bb-97a5-26ff0146a522)
 
-7. Find most frequent value for confirmed, deaths, recovered each month
-8. Find minimum values for confirmed, deaths, recovered per year
-9. Find maximum values of confirmed, deaths, recovered per year
-10. The total number of case of confirmed, deaths, recovered each month
-11. Check how corona virus spread out with respect to confirmed case
+5. Find most frequent value for confirmed, deaths, recovered each month
+   ```SQL
+   Select DISTINCT(MONTH(Date)) as month, COUNT(Confirmed)as frequent_confirmed, COUNT(Deaths) as frequent_deaths, COUNT(Recovered)as frequent_recovered
+   from [Corona virus Analysis].dbo.[Corona Virus Dataset]
+   GROUP BY MONTH(Date)
+   Order by Month(Date)
+   ```
+- **Results**
+
+![image](https://github.com/Winnykinyumu/Corona-Virus-Analysis/assets/124139386/726a6f94-f0f5-461f-9db2-3143976f16ac)
+
+6. Find minimum values for confirmed, deaths, recovered per year
+   ```SQL
+   Select DISTINCT(Year(Date)) as year, MIN(Confirmed)as minimum_confirmed, MIN(Deaths) as minimum_deaths, MIN(Recovered)as minimum_recovered
+   from [Corona virus Analysis].dbo.[Corona Virus Dataset]
+   GROUP BY Year(Date)
+   Order by Year(Date)
+   ```
+- **Results**
+  
+  ![image](https://github.com/Winnykinyumu/Corona-Virus-Analysis/assets/124139386/502adfe0-33ad-4a66-b9c4-75bc812cd4fd)
+
+7.  Find maximum values of confirmed, deaths, recovered per year
+    ```SQL
+    Select DISTINCT(Year(Date)) as year, MAX(Confirmed)as maximum_confirmed, MAX(Deaths) as maximum_deaths, MAX(Recovered)as maximum_recovered
+    from [Corona virus Analysis].dbo.[Corona Virus Dataset]
+    GROUP BY Year(Date)
+    Order by Year(Date)
+    ```
+  - **Results**
+    
+    ![image](https://github.com/Winnykinyumu/Corona-Virus-Analysis/assets/124139386/64e25650-8c6a-4979-87ea-73c1fad04479)
+
+8. The total number of case of confirmed, deaths, recovered each month
+   ```SQL
+   Select DISTINCT(MONTH(Date)) as month, SUM(Confirmed)as total_confirmed, SUM(Deaths) as total_deaths, SUM(Recovered)as total_recovered
+   from [Corona virus Analysis].dbo.[Corona Virus Dataset]
+   GROUP BY MONTH(Date)
+   Order by Month(Date)
+   ```
+- **Results**
+  
+  ![image](https://github.com/Winnykinyumu/Corona-Virus-Analysis/assets/124139386/c2794863-0c77-45d5-b8e9-8575b892bd66)
+
+9. Check how corona virus spread out with respect to confirmed case
      (Eg.: total confirmed cases, their average, variance & STDEV )
+   ```SQL
+   Select SUM(Confirmed)as total_confirmed, AVG(Confirmed) as avg_confirmed, ROUND(VAR(Confirmed),2) as variance_confirmed, ROUND(STDEV(Confirmed),2) as stdev_confirmed
+   from [Corona virus Analysis].dbo.[Corona Virus Dataset]
+   ```
+- **Results**
+  
+  ![image](https://github.com/Winnykinyumu/Corona-Virus-Analysis/assets/124139386/0f2192ab-ea63-41d9-9ae6-769ecf4246c4)
+
 12. Check how corona virus spread out with respect to death case per month
    (Eg.: total confirmed cases, their average, variance & STDEV )
 13. Check how corona virus spread out with respect to recovered case
