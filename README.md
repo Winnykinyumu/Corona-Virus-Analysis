@@ -193,9 +193,9 @@ The EDA entailed answering key questions such as;
 
 ### Conclusion/Recommendation
 ---
-1.  Noting the high variance in the confirmed and death cases, there will be a need for implementing uniform reporting standards in future, to  ensure consistency in the
+- Noting the high variance in the confirmed and death cases, there will be a need for implementing uniform reporting standards in future, to  ensure consistency in the
     data collection and help in minimizing errors.
-2.  In future, there will be a need to bolster healthcare resources for them to be well-equipped to handle surges in cases, which would hasten recovery . This would apply in
+- In future, there will be a need to bolster healthcare resources for them to be well-equipped to handle surges in cases, which would hasten recovery . This would apply in
     a case of an health pandemic.
 
   
