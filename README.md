@@ -179,6 +179,24 @@ The EDA entailed answering key questions such as;
     
     ![image](https://github.com/Winnykinyumu/Corona-Virus-Analysis/assets/124139386/f705c58b-3572-4eb4-8fa6-c6046670f0bd)
 
+### Key Insights
+---
+- The pandemic occurred between 2020-01-22 and 2021-06-13.
+- December 2020 presented to have the highest average confirmed cases,average deaths and average recovered cases.
+- Turkey presented to have the highest number of confirmed cases.
+- Gambia presented to have the lowest number of death cases.
+- The top 5 countries with the highest number of recovered cases were Turkey, India, Brazil, US and Columbia, which would suggest effective treatment measures and healthcare
+  delivery practices.
+- There was a higher variance in the spread of corona virus in relation to the total cases confirmed, total deaths and total recovered. This suggested that the situation was less 
+  controlled and control measures such as social distancing were not effective.
+- The variance gap shed light on the differences in healthcare access and treatment measures across regions which led to delayed recovery.
+
+### Conclusion/Recommendation
+---
+1.  Noting the high variance in the confirmed and death cases, there will be a need for implementing uniform reporting standards in future, to  ensure consistency in the
+    data collection and help in minimizing errors.
+2.  In future, there will be a need to bolster healthcare resources for them to be well-equipped to handle surges in cases, which would hasten recovery . This would apply in
+    a case of an health pandemic.
 
   
 
