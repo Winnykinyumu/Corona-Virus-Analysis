@@ -123,12 +123,61 @@ The EDA entailed answering key questions such as;
   
   ![image](https://github.com/Winnykinyumu/Corona-Virus-Analysis/assets/124139386/0f2192ab-ea63-41d9-9ae6-769ecf4246c4)
 
-12. Check how corona virus spread out with respect to death case per month
+10. Check how corona virus spread out with respect to death case per month
    (Eg.: total confirmed cases, their average, variance & STDEV )
-13. Check how corona virus spread out with respect to recovered case
+   ```SQL
+   Select DISTINCT(MONTH(Date)) as month, SUM(Deaths)as total_deaths, AVG(Deaths) as avg_deaths, ROUND(VAR(Deaths),2) as death_variance, ROUND(STDEV(Deaths),2) as stdev_death
+   from [Corona virus Analysis].dbo.[Corona Virus Dataset]
+   GROUP BY MONTH(Date)
+   Order by MONTH(Date)
+   ```
+- **Results**
+  
+  ![image](https://github.com/Winnykinyumu/Corona-Virus-Analysis/assets/124139386/96fd2653-be08-45b1-ab7a-d789575f0cfd)
+
+11. Check how corona virus spread out with respect to recovered case
     (Eg.: total confirmed cases, their average, variance & STDEV )
+    ```SQL
+    Select SUM(Recovered)as total_recovered, AVG(Recovered) as avg_recovered, ROUND(VAR(Recovered),2) as Recovered_variance, ROUND(STDEV(Recovered),2) as stdev_recovered
+    from [Corona virus Analysis].dbo.[Corona Virus Dataset]
+    ```
+ - **Results**
+   
+   ![image](https://github.com/Winnykinyumu/Corona-Virus-Analysis/assets/124139386/03da09af-1711-419e-a86c-205281111333)
+
 14. Find Country having highest number of the Confirmed case
-15. Find Country having lowest number of the death case
-16. Find top 5 countries having highest recovered case
+    ```SQL
+    Select TOP 1 Country_Region, MAX(Confirmed) as highest_number_of_confirmed_cases
+    from [Corona virus Analysis].dbo.[Corona Virus Dataset]
+    GROUP BY Country_Region
+    Order by highest_number_of_confirmed_cases DESC
+    ```
+- **Results**
+  
+  ![image](https://github.com/Winnykinyumu/Corona-Virus-Analysis/assets/124139386/855e0d21-65a7-4fd4-bf73-e1cc3a92c0d1)
+
+16. Find Country having lowest number of the death case
+    ```SQL
+    Select TOP 1  Country_Region, MIN(Deaths) as lowest_number_of_death_cases
+    from [Corona virus Analysis].dbo.[Corona Virus Dataset]
+    GROUP BY Country_Region
+    Order by lowest_number_of_death_cases DESC
+    ```
+- **Results**
+  
+  ![image](https://github.com/Winnykinyumu/Corona-Virus-Analysis/assets/124139386/607ec9e0-9790-4f05-822a-ffb236c4dfac)
+
+18. Find top 5 countries having highest recovered case
+    ```SQL
+    Select TOP 5  Country_Region, Max(Recovered) as highest_recovered_cases
+    from [Corona virus Analysis].dbo.[Corona Virus Dataset]
+    GROUP BY Country_Region
+    Order by highest_recovered_cases DESC
+    ```
+  - **Results**
+    
+    ![image](https://github.com/Winnykinyumu/Corona-Virus-Analysis/assets/124139386/f705c58b-3572-4eb4-8fa6-c6046670f0bd)
+
+
   
 
