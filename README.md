@@ -15,7 +15,7 @@ The primary dataset used for this analysis is the "corona_Virus_Dataset.CSV" fil
 Cleaning the dataset entailed:
 1. Data loading and inspection.
 2. Identifying and imputing missing values.
-- Write a code to check NULL values
+- **Write a code to check NULL values**
   ```SQL
   select COUNT(*) as number_of_nulls
   from [Corona virus Analysis].dbo.[Corona Virus Dataset]
@@ -30,7 +30,7 @@ Cleaning the dataset entailed:
 ### Exploratory Data Analysis (EDA)
 ---
 The EDA entailed answering key questions such as;
-1. check total number of rows
+**1. check total number of rows**
    ```SQL
    select COUNT(*)as total_rows
    from [Corona virus Analysis].dbo.[Corona Virus Dataset]
@@ -39,7 +39,7 @@ The EDA entailed answering key questions such as;
   
   ![image](https://github.com/Winnykinyumu/Corona-Virus-Analysis/assets/124139386/3267b297-588a-4bcd-8707-349b636c2bbb)
 
-2. Check what is start_date and end_date
+**2. Check what is start_date and end_date**
    ```SQL
    select MIN(Date)as start_date, MAX(Date) as end_date
    from [Corona virus Analysis].dbo.[Corona Virus Dataset]
@@ -48,7 +48,7 @@ The EDA entailed answering key questions such as;
   
   ![image](https://github.com/Winnykinyumu/Corona-Virus-Analysis/assets/124139386/d041db4b-48c7-48c6-9d15-4e5e8aff497b)
 
-3. Number of month present in dataset
+**3. Number of month present in dataset**
    ```SQL
    Select COUNT(MONTH(Date)) as number_of_month
    from [Corona virus Analysis].dbo.[Corona Virus Dataset]
@@ -58,7 +58,7 @@ The EDA entailed answering key questions such as;
     
     ![image](https://github.com/Winnykinyumu/Corona-Virus-Analysis/assets/124139386/ab890d12-dfd0-4249-b8b5-551c0e4fb605)
 
-4. Find monthly average for confirmed, deaths, recovered
+**4. Find monthly average for confirmed, deaths, recovered**
   ```SQL
   Select DISTINCT(MONTH(Date)) as month, AVG(Confirmed)as avgconfirmed, AVG (Deaths) as avgdeaths, AVG(Recovered)as avgrecovered
   from [Corona virus Analysis].dbo.[Corona Virus Dataset]
@@ -69,7 +69,7 @@ The EDA entailed answering key questions such as;
   
   ![image](https://github.com/Winnykinyumu/Corona-Virus-Analysis/assets/124139386/d5573b2b-a305-47bb-97a5-26ff0146a522)
 
-5. Find most frequent value for confirmed, deaths, recovered each month
+**5. Find most frequent value for confirmed, deaths, recovered each month**
    ```SQL
    Select DISTINCT(MONTH(Date)) as month, COUNT(Confirmed)as frequent_confirmed, COUNT(Deaths) as frequent_deaths, COUNT(Recovered)as frequent_recovered
    from [Corona virus Analysis].dbo.[Corona Virus Dataset]
@@ -80,7 +80,7 @@ The EDA entailed answering key questions such as;
 
 ![image](https://github.com/Winnykinyumu/Corona-Virus-Analysis/assets/124139386/726a6f94-f0f5-461f-9db2-3143976f16ac)
 
-6. Find minimum values for confirmed, deaths, recovered per year
+**6. Find minimum values for confirmed, deaths, recovered per year**
    ```SQL
    Select DISTINCT(Year(Date)) as year, MIN(Confirmed)as minimum_confirmed, MIN(Deaths) as minimum_deaths, MIN(Recovered)as minimum_recovered
    from [Corona virus Analysis].dbo.[Corona Virus Dataset]
@@ -91,7 +91,8 @@ The EDA entailed answering key questions such as;
   
   ![image](https://github.com/Winnykinyumu/Corona-Virus-Analysis/assets/124139386/502adfe0-33ad-4a66-b9c4-75bc812cd4fd)
 
-7.  Find maximum values of confirmed, deaths, recovered per year
+7.  **Find maximum values of confirmed, deaths, recovered per year**
+
     ```SQL
     Select DISTINCT(Year(Date)) as year, MAX(Confirmed)as maximum_confirmed, MAX(Deaths) as maximum_deaths, MAX(Recovered)as maximum_recovered
     from [Corona virus Analysis].dbo.[Corona Virus Dataset]
@@ -102,7 +103,7 @@ The EDA entailed answering key questions such as;
     
     ![image](https://github.com/Winnykinyumu/Corona-Virus-Analysis/assets/124139386/64e25650-8c6a-4979-87ea-73c1fad04479)
 
-8. The total number of case of confirmed, deaths, recovered each month
+**8. The total number of case of confirmed, deaths, recovered each month**
    ```SQL
    Select DISTINCT(MONTH(Date)) as month, SUM(Confirmed)as total_confirmed, SUM(Deaths) as total_deaths, SUM(Recovered)as total_recovered
    from [Corona virus Analysis].dbo.[Corona Virus Dataset]
@@ -113,7 +114,7 @@ The EDA entailed answering key questions such as;
   
   ![image](https://github.com/Winnykinyumu/Corona-Virus-Analysis/assets/124139386/c2794863-0c77-45d5-b8e9-8575b892bd66)
 
-9. Check how corona virus spread out with respect to confirmed case
+**9. Check how corona virus spread out with respect to confirmed case**
      (Eg.: total confirmed cases, their average, variance & STDEV )
    ```SQL
    Select SUM(Confirmed)as total_confirmed, AVG(Confirmed) as avg_confirmed, ROUND(VAR(Confirmed),2) as variance_confirmed, ROUND(STDEV(Confirmed),2) as stdev_confirmed
@@ -123,7 +124,7 @@ The EDA entailed answering key questions such as;
   
   ![image](https://github.com/Winnykinyumu/Corona-Virus-Analysis/assets/124139386/0f2192ab-ea63-41d9-9ae6-769ecf4246c4)
 
-10. Check how corona virus spread out with respect to death case per month
+**10. Check how corona virus spread out with respect to death case per month**
    (Eg.: total confirmed cases, their average, variance & STDEV )
    ```SQL
    Select DISTINCT(MONTH(Date)) as month, SUM(Deaths)as total_deaths, AVG(Deaths) as avg_deaths, ROUND(VAR(Deaths),2) as death_variance, ROUND(STDEV(Deaths),2) as stdev_death
@@ -135,7 +136,7 @@ The EDA entailed answering key questions such as;
   
   ![image](https://github.com/Winnykinyumu/Corona-Virus-Analysis/assets/124139386/96fd2653-be08-45b1-ab7a-d789575f0cfd)
 
-11. Check how corona virus spread out with respect to recovered case
+11. **Check how corona virus spread out with respect to recovered case**
     (Eg.: total confirmed cases, their average, variance & STDEV )
     ```SQL
     Select SUM(Recovered)as total_recovered, AVG(Recovered) as avg_recovered, ROUND(VAR(Recovered),2) as Recovered_variance, ROUND(STDEV(Recovered),2) as stdev_recovered
@@ -145,7 +146,7 @@ The EDA entailed answering key questions such as;
    
    ![image](https://github.com/Winnykinyumu/Corona-Virus-Analysis/assets/124139386/03da09af-1711-419e-a86c-205281111333)
 
-14. Find Country having highest number of the Confirmed case
+12. **Find Country having highest number of the Confirmed case**
     ```SQL
     Select TOP 1 Country_Region, MAX(Confirmed) as highest_number_of_confirmed_cases
     from [Corona virus Analysis].dbo.[Corona Virus Dataset]
@@ -156,7 +157,7 @@ The EDA entailed answering key questions such as;
   
   ![image](https://github.com/Winnykinyumu/Corona-Virus-Analysis/assets/124139386/855e0d21-65a7-4fd4-bf73-e1cc3a92c0d1)
 
-16. Find Country having lowest number of the death case
+13. **Find Country having lowest number of the death case**
     ```SQL
     Select TOP 1  Country_Region, MIN(Deaths) as lowest_number_of_death_cases
     from [Corona virus Analysis].dbo.[Corona Virus Dataset]
@@ -167,7 +168,7 @@ The EDA entailed answering key questions such as;
   
   ![image](https://github.com/Winnykinyumu/Corona-Virus-Analysis/assets/124139386/607ec9e0-9790-4f05-822a-ffb236c4dfac)
 
-18. Find top 5 countries having highest recovered case
+14. **Find top 5 countries having highest recovered case**
     ```SQL
     Select TOP 5  Country_Region, Max(Recovered) as highest_recovered_cases
     from [Corona virus Analysis].dbo.[Corona Virus Dataset]
