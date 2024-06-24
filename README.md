@@ -1,5 +1,5 @@
 # Corona-Virus-Analysis
-![Corona virus picture](https://github.com/Winnykinyumu/Corona-Virus-Analysis/assets/124139386/447ef764-3d7d-4d54-a10f-badf3e53917a)
+![Corona virus picture](https://github.com/Winnykinyumu/Corona-Virus-Analysis/assets/124139386/654fc539-a94e-405a-b056-d0b3a97b9293)
 ### Project Overview
 The objective of this project is to analyze the impact and spread of Coronavirus (Covid-19) between January 2020 and June 2021 across most countries worldwide. The analysis aims to provide insights into the patterns and trends associated with the pandemic, including case numbers, mortality rates and recoveries.
 ### Data Source
